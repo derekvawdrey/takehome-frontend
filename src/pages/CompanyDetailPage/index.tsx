@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { useCompany } from '../hooks/companies'
+import { useCompany } from '../../hooks/companies'
 
 function CompanyDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -51,9 +51,12 @@ function CompanyDetailPage() {
             <h1 className="text-2xl font-semibold text-gray-900">{company.name}</h1>
             <p className="mt-0.5 text-sm text-gray-500">ID: {company.id}</p>
           </div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
+          <Link
+            to={`/companies/${company.id}/merge`}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 inline-block"
+          >
             Merge with duplicate
-          </button>
+          </Link>
         </div>
         <dl className="px-6 py-4 sm:grid sm:grid-cols-1 sm:gap-4">
           <div className="py-3 sm:py-2">

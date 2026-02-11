@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useCompanies } from '../hooks/companies'
+import { useCompanies } from '../../hooks/companies'
 
 function CompanyListPage() {
   const { data: companies, isLoading, error } = useCompanies()
