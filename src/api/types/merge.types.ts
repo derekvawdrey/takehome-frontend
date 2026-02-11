@@ -17,9 +17,3 @@ export interface MergeCompleteCompanyUpdate {
     city?: string;
     postal_code?: string;
 }
-
-export type MergeResolution = {
-    field: string;
-    resolution: "target" | "duplicate" | "override";
-    value: any;
-};
