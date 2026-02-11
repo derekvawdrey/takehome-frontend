@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const navLinks = [
+  { to: '/', label: 'Companies' },
   { to: '/merge', label: 'Merge Companies' },
 ]
 
