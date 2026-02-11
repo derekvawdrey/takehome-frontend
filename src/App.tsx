@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Layout from './components/navigation/Layout'
-import { CompanyListPage, CompanyDetailPage, MergePage } from './pages'
+import { CompanyListPage, CompanyDetailPage, MergePage, PreviewMergePage } from './pages'
 
 function App() {
   const router = createBrowserRouter(
@@ -11,6 +11,7 @@ function App() {
           <Route index element={<CompanyListPage />} />
           <Route path='companies/:id' element={<CompanyDetailPage />} />
           <Route path='companies/:targetId/merge' element={<MergePage />} />
+          <Route path='companies/:targetId/merge/:duplicateId' element={<PreviewMergePage />}/>
         </Route>
       </>
     )
