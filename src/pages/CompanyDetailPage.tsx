@@ -46,9 +46,14 @@ function CompanyDetailPage() {
         <span aria-hidden className="mr-1">←</span> Companies
       </Link>
       <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
-        <div className="border-b border-gray-200 px-6 py-4">
-          <h1 className="text-2xl font-semibold text-gray-900">{company.name}</h1>
-          <p className="mt-0.5 text-sm text-gray-500">ID: {company.id}</p>
+        <div className="border-b border-gray-200 px-6 py-4 flex justify-between">
+          <div>
+            <h1 className="text-2xl font-semibold text-gray-900">{company.name}</h1>
+            <p className="mt-0.5 text-sm text-gray-500">ID: {company.id}</p>
+          </div>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
+            Merge with duplicate
+          </button>
         </div>
         <dl className="px-6 py-4 sm:grid sm:grid-cols-1 sm:gap-4">
           <div className="py-3 sm:py-2">

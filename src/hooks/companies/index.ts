@@ -2,6 +2,7 @@ export {
     companyKeys,
     useCompanies,
     useCompany,
+    useCompanySearch,
 } from './companies.hooks'
 export {
     mergeKeys,

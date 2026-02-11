@@ -14,5 +14,11 @@ export const companiesService = {
         return apiClient
             .get<Company>(`${COMPANIES_BASE}/${companyId}`)
             .then((res) => res.data);
-    }
+    },
+
+    searchCompanies(query: string): Promise<Company[]> {
+        return apiClient
+            .get<Company[]>(COMPANIES_BASE + "/search", { params: { query } })
+            .then((res) => res.data);
+    },
 }

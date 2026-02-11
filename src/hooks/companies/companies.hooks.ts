@@ -8,6 +8,7 @@ export const companyKeys = {
     all: ['company'] as const,
     list: () => [...companyKeys.all, 'list'] as const,
     detail: (id: string) => [...companyKeys.all, 'detail', id] as const,
+    search: (query: string) => [...companyKeys.all, 'search', query] as const,
 }
 
 export function useCompanies(
@@ -28,6 +29,19 @@ export function useCompany(
         queryKey: companyKeys.detail(id),
         queryFn: () => companiesService.getCompanyById(id),
         enabled: !!id,
+        ...options,
+    })
+}
+
+export function useCompanySearch(
+    query: string,
+    options?: Omit<UseQueryOptions<Company[]>, 'queryKey' | 'queryFn'>
+) {
+    const trimmed = query.trim()
+    return useQuery({
+        queryKey: companyKeys.search(trimmed),
+        queryFn: () => companiesService.searchCompanies(trimmed),
+        enabled: trimmed.length > 0,
         ...options,
     })
 }
